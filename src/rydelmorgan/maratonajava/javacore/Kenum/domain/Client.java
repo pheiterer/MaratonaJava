@@ -1,12 +1,15 @@
 package rydelmorgan.maratonajava.javacore.Kenum.domain;
 
 public class Client {
+
     private String name;
     private TipoClient tipoClient;
+    private TipoPagamento tipoPagamento;
 
-    public Client(String name, TipoClient tipoClient) {
+    public Client(String name, TipoClient tipoClient, TipoPagamento tipoPagamento) {
         this.name = name;
         this.tipoClient = tipoClient;
+        this.tipoPagamento = tipoPagamento;
     }
 
     @Override
@@ -14,22 +17,8 @@ public class Client {
         return "Client{" +
                 "name='" + name + '\'' +
                 ", tipoClient=" + tipoClient +
+                ", tipoClientInt=" + tipoClient.VALOR +
+                ", tipoPagamento=" + tipoPagamento +
                 '}';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public TipoClient getTipoClient() {
-        return tipoClient;
-    }
-
-    public void setTipoClient(TipoClient tipoClient) {
-        this.tipoClient = tipoClient;
     }
 }
