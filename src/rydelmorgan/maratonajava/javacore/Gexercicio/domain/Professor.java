@@ -21,9 +21,9 @@ public class Professor {
     public void print() {
         System.out.println(this.name);
         System.out.println(this.specialty);
-        if (profSeminaries == null) return;
-        for (Seminary semi : profSeminaries) {
-            System.out.println(semi.getProf());
+        if (this.profSeminaries == null) return;
+        for (Seminary semi : this.profSeminaries) {
+            System.out.println(semi.getTitulo());
         }
     }
 

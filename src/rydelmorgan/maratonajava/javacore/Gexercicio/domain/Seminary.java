@@ -18,7 +18,7 @@ public class Seminary {
 
     public void print() {
         System.out.println(this.titulo);
-        System.out.println(this.prof);
+        System.out.println(prof.getName());
         if (studentsSemi == null) return;
         for (Student stud : studentsSemi) {
             System.out.println(stud.getName());

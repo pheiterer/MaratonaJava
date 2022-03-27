@@ -19,7 +19,7 @@ public class Student {
     public void print(){
         System.out.println(this.name);
         System.out.println(this.idade);
-        System.out.println(this.seminary);
+        System.out.println(seminary.getTitulo());
 
     }
 
