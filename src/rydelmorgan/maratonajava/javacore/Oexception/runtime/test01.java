@@ -1,5 +1,7 @@
 package rydelmorgan.maratonajava.javacore.Oexception.runtime;
 
+import java.io.IOException;
+
 public class test01 {
     public static void main(String[] args) {
         divide(1,0);
