@@ -13,5 +13,8 @@ public class DataLoaderTest01 {
         fileLoader.load();
         fileLoader.remove();
 
+        DataLoader.retriverMaxDataSize();
+        DatabaseLoader.retriverMaxDataSize();
+
     }
 }
