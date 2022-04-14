@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.Oexception.test;
+package rydelmorgan.maratonajava.javacore.Oexception.error.test;
 
 public class test01 {
     public static void main(String[] args) {
