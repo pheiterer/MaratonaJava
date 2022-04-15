@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.Oexception.exception.test;
+package rydelmorgan.maratonajava.javacore.Oexception.exception;
 
 import java.io.File;
 import java.io.IOException;

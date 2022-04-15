@@ -1,27 +1,28 @@
 package rydelmorgan.maratonajava.javacore.Oexception.runtime;
 
+import java.io.FileNotFoundException;
 import java.nio.file.FileAlreadyExistsException;
 import java.sql.SQLException;
 
 public class test02 {
     public static void main(String[] args) {
         try{
-            throw new IndexOutOfBoundsException();
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Dentro do ArrayIndexOutOfException");
-        }catch (IndexOutOfBoundsException e) {
-            System.out.println("Dentro do IndexOutOfBoundsException");
-        }catch (IllegalArgumentException e){
-            System.out.println("Dentro do IllegalArgumentException");
-        }catch (ArithmeticException e){
-            System.out.println("Dentro do ArithmeticException");
+            throw new RuntimeException();
+        }catch (ArrayIndexOutOfBoundsException | IllegalArgumentException | ArithmeticException e){
+            System.out.println("Dentro do ArrayIndexOutOfBoundsException | IndexOutOfBoundsException | ArithmeticException");
         }catch (RuntimeException e){
             System.out.println("Dentro do RuntimeException");
         }
 
-        talvezLanceException();
+         try {
+             talvezLanceException();
+         }catch (SQLException e){
+             e.printStackTrace();
+         }catch (FileNotFoundException e){
+             e.printStackTrace();
+         }
     }
-    private static void talvezLanceException() throws SQLException, FileAlreadyExistsException{
+    private static void talvezLanceException() throws SQLException, FileNotFoundException{
 
     }
 }
