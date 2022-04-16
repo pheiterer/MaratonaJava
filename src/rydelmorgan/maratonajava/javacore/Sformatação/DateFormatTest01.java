@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.Rdates.test;
+package rydelmorgan.maratonajava.javacore.Sformatação;
 
 import java.text.DateFormat;
 import java.util.Calendar;
