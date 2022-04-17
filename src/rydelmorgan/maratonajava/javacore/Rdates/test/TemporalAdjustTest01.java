@@ -21,6 +21,6 @@ public class TemporalAdjustTest01 {
         now = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.THURSDAY));
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
-        
+
     }
 }
