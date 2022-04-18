@@ -15,6 +15,6 @@ public class FileTest02 {
         File fileRenamed = new File(fd, "arquivo_renamed.txt");
         boolean isRenamed = newFile.renameTo(fileRenamed);
         System.out.println(isRenamed);
-        
+
     }
 }
