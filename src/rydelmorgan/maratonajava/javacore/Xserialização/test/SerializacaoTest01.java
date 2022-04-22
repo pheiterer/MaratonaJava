@@ -1,6 +1,7 @@
 package rydelmorgan.maratonajava.javacore.Xserialização.test;
 
 import rydelmorgan.maratonajava.javacore.Xserialização.domain.Aluno;
+import rydelmorgan.maratonajava.javacore.Xserialização.domain.Turma;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,6 +13,8 @@ import java.nio.file.Paths;
 public class SerializacaoTest01 {
     public static void main(String[] args) {
         Aluno aluno = new Aluno(1L, "Paulo Henrique", "123456");
+        Turma turma = new Turma("Maratona Java");
+        aluno.setTurma(turma);
         serializar(aluno);
         deserializar();
 
