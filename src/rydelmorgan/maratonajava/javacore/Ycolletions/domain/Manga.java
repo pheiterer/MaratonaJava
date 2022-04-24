@@ -62,7 +62,7 @@ public class Manga implements Comparable<Manga>{
 //        }else{
 //            return 1;
 //        }
-//        return this.id.compareTo(o.getId());
+        return this.name.compareTo(o.getName());
 //        return Double.compare(preco, o.getPreco());   <------- working with types primitives
     }
 }
