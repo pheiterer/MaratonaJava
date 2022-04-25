@@ -16,6 +16,16 @@ public class ListSortTestt01 {
 
         Collections.sort(mangas);
 
+        List<Double> dinheiros = new ArrayList<>();
+        dinheiros.add(100.21);
+        dinheiros.add(10.21);
+        dinheiros.add(20.21);
+        dinheiros.add(30.21);
+
+        Collections.sort(dinheiros);
+
+
+
         for (String manga: mangas){
             System.out.println(manga);
         }
