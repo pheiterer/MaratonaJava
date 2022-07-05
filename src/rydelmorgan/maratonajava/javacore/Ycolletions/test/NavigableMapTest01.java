@@ -19,6 +19,6 @@ public class NavigableMapTest01 {
         }
 
         System.out.println(map.headMap("C",true));
-        System.out.println(map.ceilingKey());
+        System.out.println(map.ceilingKey("C"));
     }
 }
