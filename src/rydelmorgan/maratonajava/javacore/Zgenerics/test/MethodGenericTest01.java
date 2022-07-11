@@ -12,7 +12,7 @@ public class MethodGenericTest01 {
         System.out.println(boatList);
     }
 
-    private static <T extends Comparable<T>> List<T> criarArrayComUmObjeto(T t){
+    private static <T> List<T> criarArrayComUmObjeto(T t){
         return List.of(t);
     }
 //    private static <T extends Comparable<T>> List<T> criarArrayComUmObjeto(T t){
