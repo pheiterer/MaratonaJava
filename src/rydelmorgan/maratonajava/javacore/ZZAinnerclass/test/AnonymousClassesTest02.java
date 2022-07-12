@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class AnonymousClassesTest01 {
+public class AnonymousClassesTest02 {
     public static void main(String[] args) {
         List<Boat> barcoList = new ArrayList<>(List.of(new Boat("Canoa"), new Boat("Lancha")));
         barcoList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
