@@ -13,4 +13,8 @@ public class Boat {
     public Boat(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }
