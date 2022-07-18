@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.ZZDOptional;
+package rydelmorgan.maratonajava.javacore.ZZDOptional.test;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +15,7 @@ public class OptionalTest01 {
         System.out.println(o3);
         System.out.println("--------------------");
 
-        Optional<String> nameOptional= findName("William"));
+        Optional<String> nameOptional= findName("William");
         String empty = nameOptional.orElse("EMPTY");
         nameOptional.ifPresent(s -> System.out.println(s.toUpperCase()));
         System.out.println(empty);
