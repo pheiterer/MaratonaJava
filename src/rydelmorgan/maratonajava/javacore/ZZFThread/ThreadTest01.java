@@ -49,5 +49,13 @@ public class ThreadTest01 {
         t2.start();
         t3.start();
         t4.start();
+
     }
 }
+
+//        Estados das Threads
+//
+//            Waiting Blocked
+//             ||          ^
+//             ˇ           ||
+// New => Runnable <=  => Running => Dead
