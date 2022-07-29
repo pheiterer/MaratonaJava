@@ -3,7 +3,7 @@ package rydelmorgan.maratonajava.javacore.ZZFThread.test;
 import rydelmorgan.maratonajava.javacore.ZZFThread.domain.Account;
 
 public class ThreadAccountTest01 implements Runnable {
-    private Account account = new Account();
+    private final Account account = new Account();
 
     public static void main(String[] args) {
         ThreadAccountTest01 threadAccountTest01 = new ThreadAccountTest01();
@@ -24,14 +24,16 @@ public class ThreadAccountTest01 implements Runnable {
         }
     }
 
-    private synchronized void withdrawal(int amount) {
-        if (account.getBalance() >= amount) {
-            System.out.println(getThreadName() + " its going to withdraw");
-            account.withdrawal(amount);
-            System.out.println(getThreadName() + " withdraw complete, new balance " + account.getBalance());
+    private void withdrawal(int amount) {
+        synchronized (account) {
+            if (account.getBalance() >= amount) {
+                System.out.println(getThreadName() + " its going to withdraw");
+                account.withdrawal(amount);
+                System.out.println(getThreadName() + " withdraw complete, new balance " + account.getBalance());
 
-        } else {
-            System.out.println(getThreadName() + " your balance its not enough");
+            } else {
+                System.out.println(getThreadName() + " your balance its not enough");
+            }
         }
     }
 
