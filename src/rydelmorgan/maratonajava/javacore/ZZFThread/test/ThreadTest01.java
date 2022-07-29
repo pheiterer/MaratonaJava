@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.ZZFThread;
+package rydelmorgan.maratonajava.javacore.ZZFThread.test;
 
 class ThreadExample extends Thread {
     private final char c;

@@ -1,4 +1,4 @@
-package rydelmorgan.maratonajava.javacore.ZZFThread;
+package rydelmorgan.maratonajava.javacore.ZZFThread.test;
 
 class ThreadExampleRunnable1 implements Runnable{
     private final String c;
