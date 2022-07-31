@@ -1,6 +1,6 @@
 package rydelmorgan.maratonajava.javacore.ZZFThread.test;
 
-public class DEadLockTest01 {
+public class DeadLockTest01 {
     public static void main(String[] args) {
         Object lock1 = new Object();
         Object lock2 = new Object();
