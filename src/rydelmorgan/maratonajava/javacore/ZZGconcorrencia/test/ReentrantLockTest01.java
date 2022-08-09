@@ -16,7 +16,7 @@ class Worker implements Runnable{
     public void run() {
         lock.lock();
         try{
-                System.out.printf("Thread %s entrou em uma sessão crítica%n", name);
+            System.out.printf("Thread %s entrou em uma sessão crítica%n", name);
             System.out.printf("%d Threads esperando na fila%n", lock.getQueueLength());
             System.out.printf("Thread %s vai esperar 2s%n", name);
             Thread.sleep(2000);
