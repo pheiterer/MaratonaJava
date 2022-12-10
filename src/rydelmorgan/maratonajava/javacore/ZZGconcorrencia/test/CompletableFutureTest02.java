@@ -24,7 +24,7 @@ public class CompletableFutureTest02 {
 
         List<Double> prices = completableFutures.stream().map(CompletableFuture::join).toList();
 
-        System.out.println(prices);
+        System.out.print(prices);
         long end = System.currentTimeMillis();
         System.out.printf("Time passed to searchPricesSync %dms%n", (end-start));
     }
