@@ -1,10 +1,10 @@
 package rydelmorgan.maratonajava.javacore.ZZHpadraoesdeprojeto.dominio;
 
 public class Person {
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String username;
+    private final String email;
 
     private Person(String firstName, String lastName, String username, String email) {
         this.firstName = firstName;
@@ -30,9 +30,12 @@ public class Person {
         private String username;
         private String email;
 
-        public PersonBuilder() {
+        private PersonBuilder() {
         }
 
+        public static PersonBuilder Builder() {
+            return new PersonBuilder();
+        }
 
         public PersonBuilder firstName(String firstName) {
             this.firstName = firstName;
