@@ -5,6 +5,7 @@ public class CurrencyFactory {
         return switch (country) {
             case USA -> new Dolar();
             case BRAZIL -> new Real();
+            default -> throw new IllegalArgumentException("No currency found for this country");
         };
     }
 }
