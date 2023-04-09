@@ -16,6 +16,10 @@ public class AirCraft {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean bookSeat(String seat){
         return avalibleSeats.remove(seat);
     }
