@@ -16,4 +16,12 @@ public class ProducerService {
      ProducerRepository.delete(id);
     }
 
+    @SneakyThrows
+    public static void update(Producer producer){
+        if (producer.getId() == null || producer.getId() <= 0){
+            throw new IllegalAccessException("Invalid value for id");
+        }
+        ProducerRepository.update(producer);
+    }
+
 }
