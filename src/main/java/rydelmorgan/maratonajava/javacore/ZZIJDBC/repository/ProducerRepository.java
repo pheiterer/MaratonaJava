@@ -49,39 +49,26 @@ public class ProducerRepository {
 
     public static List<Producer> findAll() {
         log.info("Finding all Producer");
-        String sql = "SELECT id, name FROM anime_store.producer;";
-        List<Producer> producers = new ArrayList<>();
-        try (Connection conn = ConnectionFactory.getConnection();
-             Statement smt = conn.createStatement();
-             ResultSet rs = smt.executeQuery(sql)) {
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                Producer producer = Producer.builder().id(id).name(name).build();
-                producers.add(producer);
-            }
-        } catch (SQLException e) {
-            log.error("Error while trying to find all producer", e);
-        }
-        return producers;
+        return findByName("");
     }
 
     public static List<Producer> findByName(String name) {
-        log.info("Finding all Producer");
-        String sql = "SELECT name FROM anime_store.producer where name like '%%s%';"
+        log.info("Finding a Producer");
+        String sql = "SELECT * FROM anime_store.producer where name like '%%%s%%';"
                 .formatted(name);
         List<Producer> producers = new ArrayList<>();
         try (Connection conn = ConnectionFactory.getConnection();
              Statement smt = conn.createStatement();
              ResultSet rs = smt.executeQuery(sql)) {
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String pname = rs.getString("name");
-                Producer producer = Producer.builder().id(id).name(pname).build();
+                Producer producer = Producer.builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .build();
                 producers.add(producer);
             }
         } catch (SQLException e) {
-            log.error("Error while trying to find all producer", e);
+            log.error("Error while trying to find a producer", e);
         }
         return producers;
     }

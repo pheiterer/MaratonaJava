@@ -28,4 +28,8 @@ public class ProducerService {
     public static List<Producer> findAll(){
         return ProducerRepository.findAll();
     }
+
+    public static List<Producer> findByName(String name){
+        return ProducerRepository.findByName(name);
+    }
 }
