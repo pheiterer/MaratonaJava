@@ -5,8 +5,11 @@ import rydelmorgan.maratonajava.javacore.ZZIJDBC.conn.ConnectionFactory;
 import rydelmorgan.maratonajava.javacore.ZZIJDBC.domain.Producer;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 @Log4j2
 public class ProducerRepository {
@@ -34,7 +37,7 @@ public class ProducerRepository {
 
     public static void update(Producer producer) {
         String sql = "UPDATE `anime_store`.`producer` SET `name` = '%s' WHERE (`id` = '%d');"
-                .formatted(producer.getName(),producer.getId());
+                .formatted(producer.getName(), producer.getId());
         try (Connection conn = ConnectionFactory.getConnection();
              Statement smt = conn.createStatement()) {
             Integer rowsAffected = smt.executeUpdate(sql);
@@ -42,6 +45,45 @@ public class ProducerRepository {
         } catch (SQLException e) {
             log.error("Error while trying to update producer '{}'", producer.getId(), e);
         }
+    }
+
+    public static List<Producer> findAll() {
+        log.info("Finding all Producer");
+        String sql = "SELECT id, name FROM anime_store.producer;";
+        List<Producer> producers = new ArrayList<>();
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement smt = conn.createStatement();
+             ResultSet rs = smt.executeQuery(sql)) {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                Producer producer = Producer.builder().id(id).name(name).build();
+                producers.add(producer);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer", e);
+        }
+        return producers;
+    }
+
+    public static List<Producer> findByName(String name) {
+        log.info("Finding all Producer");
+        String sql = "SELECT name FROM anime_store.producer where name like '%%s%';"
+                .formatted(name);
+        List<Producer> producers = new ArrayList<>();
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement smt = conn.createStatement();
+             ResultSet rs = smt.executeQuery(sql)) {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String pname = rs.getString("name");
+                Producer producer = Producer.builder().id(id).name(pname).build();
+                producers.add(producer);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer", e);
+        }
+        return producers;
     }
 
 }
