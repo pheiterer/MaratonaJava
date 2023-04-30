@@ -97,28 +97,46 @@ public class ProducerRepository {
         String sql = "SELECT * FROM anime_store.producer;";
         try (Connection conn = ConnectionFactory.getConnection()) {
             DatabaseMetaData metaData = conn.getMetaData();
-            if (metaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)){
+            if (metaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)) {
                 log.info("Supports TYPE_FORWARD_ONLY");
-                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)){
+                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
                     log.info("And Supports CONCUR_UPDATABLE");
                 }
             }
 
-            if (metaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)){
+            if (metaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)) {
                 log.info("Supports TYPE_SCROLL_INSENSITIVE");
-                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)){
+                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
                     log.info("And Supports CONCUR_UPDATABLE");
                 }
             }
 
-            if (metaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)){
+            if (metaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)) {
                 log.info("Supports TYPE_SCROLL_SENSITIVE");
-                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)){
+                if (metaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+
                     log.info("And Supports CONCUR_UPDATABLE");
                 }
             }
         } catch (SQLException e) {
             log.error("Error while trying to show Metadata", e);
+        }
+    }
+
+    public static void showTypeScrollWorking() {
+        String sql = "SELECT * FROM anime_store.producer;";
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement smt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = smt.executeQuery(sql)) {
+            log.info("Is this the last row? '{}'", rs.last());
+            log.info("Last row number '{}'", rs.getRow());
+            log.info(Producer.builder()
+                    .id(rs.getInt("id"))
+                    .name(rs.getString("name"))
+                    .build());
+
+        } catch (SQLException e) {
+            log.error("Error while trying to find a producer", e);
         }
     }
 

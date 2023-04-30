@@ -39,4 +39,8 @@ public class ProducerService {
     public static void showDriverMetadata() {
         ProducerRepository.showDriverMetadata();
     }
+
+    public static void showTypeScrollWorking() {
+        ProducerRepository.showTypeScrollWorking();
+    }
 }
