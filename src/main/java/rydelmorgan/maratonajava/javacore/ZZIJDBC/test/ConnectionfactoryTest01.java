@@ -21,10 +21,11 @@ public class ConnectionfactoryTest01 {
 //        ProducerService.showDriverMetadata();
 //        ProducerService.showTypeScrollWorking();
 //        List<Producer> producersUpperCase = ProducerService.findByNameAndUpdateToUpperCase("Been");
-        List<Producer> insertProducer = ProducerService.findByNameandInsertWhenNotFound("A1-Pictures");
+//        List<Producer> insertProducer = ProducerService.findByNameandInsertWhenNotFound("A1-Pictures");
 //        log.info("Producers found '{}'", insertProducer);
 //        ProducerService.findByNameAndDelete("A1-Pictures");
-
+        List<Producer> all = ProducerService.findByNamePreparedStatement("B");
+        log.info("Producers found '{}'", all);
 
     }
 }
