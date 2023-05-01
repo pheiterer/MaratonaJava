@@ -4,6 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import rydelmorgan.maratonajava.javacore.ZZIJDBC.domain.Producer;
 import rydelmorgan.maratonajava.javacore.ZZIJDBC.servicer.ProducerService;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionfactoryTest01 {
     public static void main(String[] args) {
@@ -17,6 +19,10 @@ public class ConnectionfactoryTest01 {
 //        log.info("Producers found '{}'", all);
 //        ProducerService.showProducerMetaData();
 //        ProducerService.showDriverMetadata();
-        ProducerService.showTypeScrollWorking();
+//        ProducerService.showTypeScrollWorking();
+        List<Producer> producersUpperCase = ProducerService.findByNameAndUpdateToUpperCase("Been");
+        log.info("Producers found '{}'", producersUpperCase);
+
+
     }
 }
