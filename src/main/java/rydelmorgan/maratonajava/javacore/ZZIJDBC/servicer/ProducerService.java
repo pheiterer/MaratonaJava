@@ -25,6 +25,13 @@ public class ProducerService {
         ProducerRepository.update(producer);
     }
 
+    public static void updatePrepareStatement(Producer producer) {
+        if (producer.getId() == null || producer.getId() <= 0) {
+            throw new IllegalArgumentException("Invalid value for id");
+        }
+        ProducerRepository.updatePrepareStatement(producer);
+    }
+
     public static List<Producer> findAll() {
         return ProducerRepository.findAll();
     }
