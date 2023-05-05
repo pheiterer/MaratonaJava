@@ -7,6 +7,10 @@ import rydelmorgan.maratonajava.javacore.ZZIJDBC.repository.ProducerRepository;
 import java.util.List;
 
 public class ProducerService {
+
+    public static void saveTransaction(List<Producer> producers) {
+        ProducerRepository.saveTransaction(producers);
+    }
     public static void save(Producer producer) {
         ProducerRepository.save(producer);
     }
