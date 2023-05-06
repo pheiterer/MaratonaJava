@@ -1,6 +1,5 @@
 package rydelmorgan.maratonajava.javacore.ZZIJDBC.servicer;
 
-import lombok.SneakyThrows;
 import rydelmorgan.maratonajava.javacore.ZZIJDBC.domain.Producer;
 import rydelmorgan.maratonajava.javacore.ZZIJDBC.repository.ProducerRepository;
 
