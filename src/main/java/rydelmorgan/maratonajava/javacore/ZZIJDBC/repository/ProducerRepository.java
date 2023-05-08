@@ -23,12 +23,12 @@ public class ProducerRepository {
 
     private static void preparedStatementSaveTransaction(Connection connection, List<Producer> producers) throws SQLException {
         String sql = "INSERT INTO `anime_store`.`producer` (`name`) VALUES (?);";
-        for (Producer p: producers){
-            try (PreparedStatement ps = connection.prepareStatement(sql)){
+        for (Producer p : producers) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 log.info("Saving producer '{}'", p.getName());
                 ps.setString(1, p.getName());
                 ps.execute();
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 e.printStackTrace();
                 connection.rollback();
             }
@@ -270,7 +270,7 @@ public class ProducerRepository {
     private static PreparedStatement preparedStatementFindByName(Connection connection, String name) throws SQLException {
         String sql = "SELECT * FROM anime_store.producer where name like ?;";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1, String.format("%%%s%%",name));
+        ps.setString(1, String.format("%%%s%%", name));
         return ps;
     }
 
@@ -297,7 +297,7 @@ public class ProducerRepository {
     private static PreparedStatement preparedStatementFindByNameCallable(Connection connection, String name) throws SQLException {
         String sql = "CALL `anime_store`.`sp_get_producer_by_name`(?);";
         CallableStatement cs = connection.prepareCall(sql);
-        cs.setString(1, String.format("%%%s%%",name));
+        cs.setString(1, String.format("%%%s%%", name));
         return cs;
     }
 

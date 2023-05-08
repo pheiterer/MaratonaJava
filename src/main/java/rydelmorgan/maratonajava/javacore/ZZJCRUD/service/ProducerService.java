@@ -3,7 +3,7 @@ package rydelmorgan.maratonajava.javacore.ZZJCRUD.service;
 import rydelmorgan.maratonajava.javacore.ZZJCRUD.domain.Producer;
 import rydelmorgan.maratonajava.javacore.ZZJCRUD.repository.ProducerRepository;
 
-import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class ProducerService {
@@ -11,25 +11,19 @@ public class ProducerService {
 
     public static void buildMenu(int op) {
         switch (op) {
-            case 1:
-                find();
-                break;
-            case 2:
-                delete();
-                break;
-            default:
-                throw new IllegalArgumentException("Not a valid option");
+            case 1 -> find();
+            case 2 -> delete();
+            case 3 -> save();
+            case 4 -> update();
+            default -> throw new IllegalArgumentException("Not a valid option");
         }
     }
 
     private static void find() {
         System.out.println("Type the name or empty to all");
         String name = SCANNER.nextLine();
-        List<Producer> producers = ProducerRepository.findByName(name);
-        for (int i = 0; i < producers.size(); i++) {
-            Producer producer = producers.get(i);
-            System.out.printf("[%d] - ID: %d | %s%n", i, producer.getId(), producer.getName());
-        }
+        ProducerRepository.findByName(name)
+                .forEach(p -> System.out.printf("[%d] - %s%n",p.getId(), p.getName()));
     }
 
     private static void delete() {
@@ -40,5 +34,31 @@ public class ProducerService {
         if (choice.equalsIgnoreCase("s")) {
             ProducerRepository.delete(id);
         }
+    }
+
+    private static void save(){
+        System.out.println("Type the name of the producer:");
+        String name = SCANNER.nextLine();
+        Producer producer = Producer.builder().name(name).build();
+        ProducerRepository.save(producer);
+    }
+
+    private static void update() {
+        System.out.println("Type the id of the producer:");
+        Optional<Producer> optionalProducer = ProducerRepository.findById(Integer.parseInt(SCANNER.nextLine()));
+        if (optionalProducer.isEmpty()){
+            System.out.println("Producer not found");
+            return;
+        }
+        Producer producerFromDB = optionalProducer.get();
+        System.out.println("Producer Found" + producerFromDB);
+        System.out.println("Type the new name or enter to keep the same");
+        String name = SCANNER.nextLine();
+        name = name.isEmpty() ? producerFromDB.getName() : name;
+        Producer producerToUpdate = Producer.builder()
+                .id(producerFromDB.getId())
+                .name(name)
+                .build();
+        ProducerRepository.update(producerToUpdate);
     }
 }
