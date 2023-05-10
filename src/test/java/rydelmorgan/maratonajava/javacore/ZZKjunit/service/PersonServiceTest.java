@@ -8,18 +8,18 @@ import rydelmorgan.maratonajava.javacore.ZZKjunit.dominio.Person;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
 class PersonServiceTest {
     private Person adult;
     private Person notAdult;
     private PersonService personService;
+
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         adult = new Person(18);
         notAdult = new Person(15);
         personService = new PersonService();
     }
+
     @Test
     @DisplayName("A person should be not adult when age is lower than 18")
     void isAdult_ReturnFalse_WhenAgeIsLowerThan18() {
