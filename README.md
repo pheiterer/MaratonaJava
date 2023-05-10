@@ -3,7 +3,7 @@
 # Maratona Java Virado No Jiraya
 
 Este é um repositório que criei a partir das aulas que ia assistindo do canal DevDojo (link da playlist na descrição do repositório), 
-a cada vídeo que assistia eu comitava o que me foi ensinado no vídeo, obviamente não está totalmente de acordo com a playlist, pois também foi utilizado para 
+a cada vídeo que assistia eu comitava o que me foi ensinado no vídeo, obviamente não está totalmente de acordo com a playlist e organizado, pois também foi utilizado para 
 aprender a usar o GitHub de forma geral.
 
 Caso tenha interesse em saber o que o curso aborda vou deixar uma lista aqui em baixo. Esta informação foi tirada do repositório original
