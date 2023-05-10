@@ -1,6 +1,6 @@
 ![](README/javaLogo.gif)
 
-# Maratona Java Virado No Jiraya
+# Maratona Java Virado No Jiraya 🏽🥷🏻
 
 Este é um repositório que criei a partir das aulas que ia assistindo do canal DevDojo (link da playlist na descrição do repositório), 
 a cada vídeo que assistia eu comitava o que me foi ensinado no vídeo, obviamente não está totalmente de acordo com a playlist e organizado, pois também foi utilizado para 
