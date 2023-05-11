@@ -9,7 +9,7 @@ aprender a usar o GitHub de forma geral.
 Caso tenha interesse em saber o que o curso aborda vou deixar uma lista aqui em baixo. Esta informação foi tirada do repositório original
 do DevDojo. <sub>*Repositório original -->* [☕](https://github.com/devdojobr/maratona-java-virado-no-jiraya)</sub>
 
-![](README/CertifivadoBrabo.png)
+ ![](README/CertifivadoBrabo.png)
 
 ## Lista dos vídeos em Ordem
 1. Maratona Java 01 - O que esperar do curso
