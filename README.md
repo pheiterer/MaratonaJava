@@ -1,6 +1,6 @@
-<h1 align="center"><img src="README/javaLogo.gif"></h1>
+<h3 align="center"><img src="README/javaLogo.png" width=300 height=300></h3>
  
-# Maratona Java Virado No Jiraya🥷🏻
+<h1 align="center">Maratona Java Virado No Jiraya</h1>
 
 Este é um repositório que criei a partir das aulas que ia assistindo do canal DevDojo (link da playlist na descrição do repositório), 
 a cada vídeo que assistia eu comitava o que me foi ensinado no vídeo, obviamente não está totalmente de acordo com a playlist e organizado, pois também foi utilizado para 
