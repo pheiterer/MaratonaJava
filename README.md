@@ -23,7 +23,7 @@ do DevDojo. <sub>*Repositório original -->* [☕](https://github.com/devdojobr/
 1. Maratona Java 09 - Comentários
 1. Maratona Java 10 - Tipos primitivos 
 1. Maratona Java 15 - Operadores 
-1. Maratona Java 20 - Estruturas Condicionais dsada
+1. Maratona Java 20 - Estruturas Condicionais
 1. Maratona Java 32 - Arrays
 1. Maratona Java 36 - Arrays Multidimensionais 
 1. Maratona Java 39 - Orientação Objetos
